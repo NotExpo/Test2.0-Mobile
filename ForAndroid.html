@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body onload="load()">
+    <!-- Scripts -->
+     <script>
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function load() {
+    const body = document.body;
+    body.style.background = 'rgb(150,150,150)';
+    body.style.width = '100%';
+    body.style.height = '100vh';
+    body.style.position = 'fixed';
+    body.style.margin = '0';
+    body.style.overflow = 'hidden';
+    body.style.display = 'flex';
+    body.style.flexDirection = 'column';
+    const LockScreenBackground = document.createElement('div');
+    LockScreenBackground.style.background = 'linear-gradient(to bottom right, rgb(236, 159, 58), rgb(156, 104, 37), rgb(105, 70, 24))';
+    LockScreenBackground.style.width = '100%';
+    LockScreenBackground.style.height = '100vh';
+    LockScreenBackground.style.position = 'fixed';
+    LockScreenBackground.style.transform = 'scale(1.15)';
+    LockScreenBackground.style.opacity = '0';
+    LockScreenBackground.style.transition = 'all 0.2s ease';
+    body.appendChild(LockScreenBackground);
+    const loginBtn = document.createElement('button');
+    loginBtn.style.background = 'linear-gradient(to bottom right, rgb(150,150,150), rgb(100,100,100), rgb(50,50,50))';
+    loginBtn.style.width = '80px';
+    loginBtn.style.height = '80px';
+    loginBtn.style.border = 'none';
+    loginBtn.style.borderRadius = '50px';
+    loginBtn.style.position = 'absolute';
+    loginBtn.style.top = '70%';
+    loginBtn.style.left = '50%';
+    loginBtn.style.boxShadow = '2px -2px 5px rgb(105, 70, 24), -2px 2px 5px rgb(236, 159, 58), 2px 2px 5px rgb(105, 70, 24), -2px -2px 5px rgb(236, 159, 58)'
+    loginBtn.style.transform = 'translate(-50%, -50%)';
+    loginBtn.style.color = 'black';
+    loginBtn.style.fontSize = '40px';
+    loginBtn.style.fontFamily = 'Arial, sans-serif';
+    loginBtn.style.fontWeight = 'bold';
+    loginBtn.style.textShadow = '2px -2px 5px black, -2px 2px 5px white, 2px 2px 5px black, -2px -2px 5px white'
+    loginBtn.style.transition = 'all 0.2s ease';
+    const fingerprint = document.createElement('i');
+    fingerprint.setAttribute('class', 'fa-solid fa-fingerprint');
+    loginBtn.appendChild(fingerprint);
+    LockScreenBackground.appendChild(loginBtn);
+    await sleep(1000);
+    LockScreenBackground.style.transform = 'scale(1)';
+    LockScreenBackground.style.opacity = '1';
+
+    // Event Listeners
+    loginBtn.addEventListener('mouseenter', () => {
+        loginBtn.style.transform = 'scale(1.15) translate(-45%, -45%)';
+    });
+    loginBtn.addEventListener('mouseleave', () => {
+        loginBtn.style.transform = 'scale(1) translate(-50%, -50%)';
+    });
+    loginBtn.addEventListener('mousedown', () => {
+        loginBtn.style.transform = 'scale(0.85) translate(-55%, -55%)';
+    });
+    loginBtn.addEventListener('mouseup', () => {
+        loginBtn.style.transform = 'scale(1) translate(-50%, -50%)';
+    });
+    loginBtn.addEventListener('click', async () => {
+        LockScreenBackground.style.transform = 'scale(1.15)';
+        LockScreenBackground.style.opacity = '0';
+        const header = document.createElement('header');
+        header.style.width = '60%';
+        header.style.height = '60px';
+        header.style.background = 'rgba(0,0,0)';
+        header.style.borderRadius = '50px';
+        header.style.alignSelf = 'center';
+        header.style.marginTop = '20px';
+        header.style.border = 'none';
+        header.style.display = 'flex';
+        header.style.transition = 'all 0.2s ease';
+        header.style.zIndex = '1000'
+        body.appendChild(header);
+        header.style.transform = 'scale(1.15)';
+        header.style.opacity = '0';
+        const headerCloseBackground = document.createElement('div');
+        headerCloseBackground.style.background = 'rgba(0,0,0,0.0)';
+        headerCloseBackground.style.width = '100%';
+        headerCloseBackground.style.height = '100%';
+        headerCloseBackground.style.position = 'fixed';
+        headerCloseBackground.style.zIndex = '999';
+        headerCloseBackground.style.opacity = '0';
+        body.appendChild(headerCloseBackground);
+        await sleep(500);
+        header.style.transform = 'scale(1)';
+        header.style.opacity = '1';
+        header.addEventListener('mouseenter', () => {
+            if (header.style.width === '96%') {
+                // Nothing
+            } else {
+                header.style.transform = 'scale(1.15)';
+            }
+        });
+        header.addEventListener('mouseleave', () => {
+            if (header.style.width === '96%') {
+                // Nothing
+            } else {
+                header.style.transform = 'scale(1)';
+            }
+        });
+        header.addEventListener('mousedown', async () => {
+            header.style.transform = 'scale(0.85)';
+        });
+        header.addEventListener('mouseup', async () => {
+            header.style.transform = 'scale(1)';
+        });
+        header.addEventListener('click', async () => {
+            header.style.width = '96%';
+            header.style.height = '15%';
+            header.style.alignSelf = 'none';
+            header.style.marginTop = '1%';
+            header.style.marginLeft = '1%';
+            headerCloseBackground.style.opacity = '1';
+        });
+        headerCloseBackground.addEventListener('click', async () => {
+            header.style.width = '60%';
+            header.style.height = '60px';
+            header.style.alignSelf = 'center';
+            header.style.marginTop = '20px';
+            header.style.marginLeft = '0px';
+            headerCloseBackground.style.opacity = '0';
+        });
+    });
+}
+     </script>
+</body>
+</html>
