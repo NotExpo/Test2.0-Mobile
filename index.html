@@ -9,6 +9,32 @@
 <body onload="load()">
     <!-- Scripts -->
      <script>
+const style = document.createElement('style');
+style.textContent = `
+@media screen and (orientation: landscape) {
+    body::before {
+        content: "Please rotate your device to portrait mode.";
+        position: fixed;
+        z-index: 9999;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.95);
+        color: #fff;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        pointer-events: all;
+    }
+    body > *:not(style) {
+        filter: blur(8px) grayscale(1) brightness(0.5);
+        pointer-events: none;
+        user-select: none;
+    }
+}
+`
+document.head.appendChild(style)
+         
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
