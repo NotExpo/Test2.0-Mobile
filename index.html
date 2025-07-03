@@ -51,10 +51,9 @@ async function load() {
     body.style.flexDirection = 'column';
     const LockScreenBackground = document.createElement('div');
     LockScreenBackground.style.backgroundImage = 'https://images.app.goo.gl/rDpuMzRroEMTcZiG7';
-    LockScreenBackground.style.background-repeat: no-repeat;
-    LockScreenBackground.style.background-size: cover;
-    LockScreenBackground.style.background-position: center;
-    LockScreenBackground.style.background-color: #cccccc;
+    LockScreenBackground.style.backgroundRepeat = 'no-repeat';
+    LockScreenBackground.style.backgroundSize = 'cover';
+    LockScreenBackground.style.backgroundPosition = 'center';
     LockScreenBackground.style.width = '100%';
     LockScreenBackground.style.height = '100vh';
     LockScreenBackground.style.position = 'fixed';
