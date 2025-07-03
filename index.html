@@ -98,12 +98,12 @@ async function load() {
         LockScreenBackground.style.transform = 'scale(1.15)';
         LockScreenBackground.style.opacity = '0';
         const header = document.createElement('header');
-        header.style.width = '40%';
-        header.style.height = '50px';
+        header.style.width = '45%';
+        header.style.height = '45px';
         header.style.background = 'rgba(0,0,0)';
         header.style.borderRadius = '50px';
         header.style.alignSelf = 'center';
-        header.style.marginTop = '20px';
+        header.style.marginTop = '15px';
         header.style.border = 'none';
         header.style.display = 'flex';
         header.style.transition = 'all 0.2s ease';
@@ -151,8 +151,8 @@ async function load() {
             headerCloseBackground.style.opacity = '1';
         });
         headerCloseBackground.addEventListener('click', async () => {
-            header.style.width = '40%';
-            header.style.height = '50px';
+            header.style.width = '45%';
+            header.style.height = '45px';
             header.style.alignSelf = 'center';
             header.style.marginTop = '20px';
             header.style.marginLeft = '0px';
