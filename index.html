@@ -33,8 +33,8 @@ style.textContent = `
     }
 }
 `
-document.head.appendChild(style)
-         
+document.head.appendChild(style);
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -50,10 +50,7 @@ async function load() {
     body.style.display = 'flex';
     body.style.flexDirection = 'column';
     const LockScreenBackground = document.createElement('div');
-    LockScreenBackground.style.background = 'linear-gradient(to bottom right, rgb(236, 159, 58), rgb(156, 104, 37), rgb(105, 70, 24))';
-    LockScreenBackground.style.backgroundRepeat = 'no-repeat';
-    LockScreenBackground.style.backgroundSize = 'cover';
-    LockScreenBackground.style.backgroundPosition = 'center';
+    LockScreenBackground.style.background = 'url("https://4kwallpapers.com/images/wallpapers/ios-13-stock-ipados-red-black-background-amoled-hd-1080x2400-799.jpg") center center / cover no-repeat';
     LockScreenBackground.style.width = '100%';
     LockScreenBackground.style.height = '100vh';
     LockScreenBackground.style.position = 'fixed';
@@ -62,7 +59,7 @@ async function load() {
     LockScreenBackground.style.transition = 'all 0.2s ease';
     body.appendChild(LockScreenBackground);
     const loginBtn = document.createElement('button');
-    loginBtn.style.background = 'linear-gradient(to bottom right, rgb(150,150,150), rgb(100,100,100), rgb(50,50,50))';
+    loginBtn.style.background = 'linear-gradient(to bottom right, rgba(150,150,150,0.5), rgba(100,100,100,0.5), rgba(50,50,50,0.5))';
     loginBtn.style.width = '80px';
     loginBtn.style.height = '80px';
     loginBtn.style.border = 'none';
@@ -70,13 +67,11 @@ async function load() {
     loginBtn.style.position = 'absolute';
     loginBtn.style.top = '70%';
     loginBtn.style.left = '50%';
-    loginBtn.style.boxShadow = '2px -2px 5px rgb(105, 70, 24), -2px 2px 5px rgb(236, 159, 58), 2px 2px 5px rgb(105, 70, 24), -2px -2px 5px rgb(236, 159, 58)'
     loginBtn.style.transform = 'translate(-50%, -50%)';
-    loginBtn.style.color = 'black';
+    loginBtn.style.color = 'rgba(255,255,255,0.5)';
     loginBtn.style.fontSize = '40px';
     loginBtn.style.fontFamily = 'Arial, sans-serif';
     loginBtn.style.fontWeight = 'bold';
-    loginBtn.style.textShadow = '2px -2px 5px black, -2px 2px 5px white, 2px 2px 5px black, -2px -2px 5px white'
     loginBtn.style.transition = 'all 0.2s ease';
     const fingerprint = document.createElement('i');
     fingerprint.setAttribute('class', 'fa-solid fa-fingerprint');
@@ -103,8 +98,8 @@ async function load() {
         LockScreenBackground.style.transform = 'scale(1.15)';
         LockScreenBackground.style.opacity = '0';
         const header = document.createElement('header');
-        header.style.width = '60%';
-        header.style.height = '60px';
+        header.style.width = '40%';
+        header.style.height = '50px';
         header.style.background = 'rgba(0,0,0)';
         header.style.borderRadius = '50px';
         header.style.alignSelf = 'center';
@@ -156,8 +151,8 @@ async function load() {
             headerCloseBackground.style.opacity = '1';
         });
         headerCloseBackground.addEventListener('click', async () => {
-            header.style.width = '60%';
-            header.style.height = '60px';
+            header.style.width = '40%';
+            header.style.height = '50px';
             header.style.alignSelf = 'center';
             header.style.marginTop = '20px';
             header.style.marginLeft = '0px';
